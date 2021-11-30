@@ -5,7 +5,8 @@ __pycache__/
 
 # DIY BY im0qianqian
 .idea/
-Datasets/
+train_csvs/
+test_csvs/
 
 # C extensions
 *.so
