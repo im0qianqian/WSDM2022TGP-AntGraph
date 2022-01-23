@@ -12,14 +12,20 @@
 - train_csvs/node_features.csv
 - train_csvs/edge_type_features.csv
 - test_csvs/input_A_initial.csv
+- test_csvs/input_A.csv
+- test_csvs/input_A_final.csv
 
 ### Datasets B
 - train_csvs/edges_train_B.csv
 - test_csvs/input_B_initial.csv
+- test_csvs/input_B.csv
+- test_csvs/input_B_final.csv
+
+
 
 ## Usage
 
-### Get LINE embedding
+### 1. Get LINE embedding
 
 We use [LINE](https://github.com/tangjianpku/LINE) to generate a representation for the nodes of the constructed graph, and the heterogeneous edge information is temporarily discarded.
 
@@ -27,9 +33,31 @@ For dataset B, `src_id` and `dst_id` refer to different things, that is, they be
 
 `graph_src_dst_id_by_all_edge_type_200_neg1-1_judge0.875.emb` and `dataset_b_graph_src_dst_id_by_all_edge_type2.emb` in the code are line embedding files.
 
-#### Settings
 
-**Dataset A**
+
+#### 1.1, build input data for LINE
+
+```bash
+cd src
+python ./generate_for_line_emb.py --dataset A
+python ./generate_for_line_emb.py --dataset B
+```
+
+
+
+#### 1.2, generate LINE embedding
+
+The `-threads 64` can be changed according to the actual situation.
+
+##### Dataset A
+
+```bash
+cd src/LINE-master/(linux or windows)
+
+./line.exe -train ../../../embs/dataset_A_graph_src_dst_id.txt -output ../../../embs/dataset_A_graph_src_dst_id.emb -size 200 -order 1 -negative 1 -samples 1000 -threads 64
+```
+
+Settings
 
 ```
 Order: 1
@@ -42,7 +70,17 @@ Number of edges: 54090536
 Number of vertices: 19442
 ```
 
-**Dataset B**
+
+
+##### Dataset B
+
+```bash
+cd src/LINE-master/(linux or windows)
+
+./line.exe -train ../../../embs/dataset_B_graph_src_dst_id.txt -output ../../../embs/dataset_B_graph_src_dst_id.emb -size 200 -order 1 -negative 5 -samples 1000 -threads 64
+```
+
+Settings
 
 ```
 Order: 1
@@ -55,9 +93,13 @@ Number of edges: 8278431
 Number of vertices: 1304045
 ```
 
-### All Pipeline
+
+
+### 2. All Pipeline
 
 [AntGraph_solution.ipynb](./src/AntGraph_solution.ipynb)
+
+
 
 ## Dependencies
 

@@ -7,6 +7,8 @@ __pycache__/
 .idea/
 train_csvs/
 test_csvs/
+embs/*.txt
+embs/*.emb
 
 # C extensions
 *.so
