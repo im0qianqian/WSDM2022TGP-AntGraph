@@ -9,6 +9,9 @@ train_csvs/
 test_csvs/
 embs/*.txt
 embs/*.emb
+catboost_info/
+submits/*/*.csv
+submits/*/*.pickle
 
 # C extensions
 *.so

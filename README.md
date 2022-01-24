@@ -4,9 +4,10 @@
 
 [Link to this challenge](https://www.dgl.ai/WSDM2022-Challenge/)
 
----
+
 
 ## Datasets
+
 ### Datasets A
 - train_csvs/edges_train_A.csv
 - train_csvs/node_features.csv
@@ -31,11 +32,11 @@ We use [LINE](https://github.com/tangjianpku/LINE) to generate a representation 
 
 For dataset B, `src_id` and `dst_id` refer to different things, that is, they belong to heterogeneous nodes. Therefore, when constructing the LINE representation, we made a transformation for `dst_id` unification to distinguish between User and Item. It's `dst_id = dst_id + dst_offset`.
 
-`graph_src_dst_id_by_all_edge_type_200_neg1-1_judge0.875.emb` and `dataset_b_graph_src_dst_id_by_all_edge_type2.emb` in the code are line embedding files.
+`dataset_A_graph_src_dst_id.emb` and `dataset_B_graph_src_dst_id.emb` in the code are line embedding files.
 
 
 
-#### 1.1, build input data for LINE
+#### 1.1. build input data for LINE
 
 ```bash
 cd src
@@ -45,16 +46,18 @@ python ./generate_for_line_emb.py --dataset B
 
 
 
-#### 1.2, generate LINE embedding
+#### 1.2. generate LINE embedding
 
 The `-threads 64` can be changed according to the actual situation.
+
+We use the **linux** version of the program to generate the embeddings.
 
 ##### Dataset A
 
 ```bash
 cd src/LINE-master/(linux or windows)
 
-./line.exe -train ../../../embs/dataset_A_graph_src_dst_id.txt -output ../../../embs/dataset_A_graph_src_dst_id.emb -size 200 -order 1 -negative 1 -samples 1000 -threads 64
+./line -train ../../../embs/dataset_A_graph_src_dst_id.txt -output ../../../embs/dataset_A_graph_src_dst_id.emb -size 200 -order 1 -negative 1 -samples 1000 -threads 64
 ```
 
 Settings
@@ -77,7 +80,7 @@ Number of vertices: 19442
 ```bash
 cd src/LINE-master/(linux or windows)
 
-./line.exe -train ../../../embs/dataset_B_graph_src_dst_id.txt -output ../../../embs/dataset_B_graph_src_dst_id.emb -size 200 -order 1 -negative 5 -samples 1000 -threads 64
+./line -train ../../../embs/dataset_B_graph_src_dst_id.txt -output ../../../embs/dataset_B_graph_src_dst_id.emb -size 200 -order 1 -negative 5 -samples 1000 -threads 64
 ```
 
 Settings
