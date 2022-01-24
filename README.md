@@ -36,6 +36,12 @@ For dataset B, `src_id` and `dst_id` refer to different things, that is, they be
 
 
 
+**Quick guide**
+
+Download the `*.emb` from [this link (OneDrive)](https://im0qianqian-my.sharepoint.com/:f:/g/personal/i_dreamwings_cn/ElcuFF939sNPv5H4KWGDdtEBCQ-ONrqa9hqm4bzjS6dAEA?e=sk5kT8) and place it in the `./embs` folder.
+
+
+
 #### 1.1. build input data for LINE
 
 ```bash
