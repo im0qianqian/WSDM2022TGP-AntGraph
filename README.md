@@ -113,7 +113,7 @@ Number of vertices: 1304045
 ## Dependencies
 
 ```
-numpy==1.19.2
+numpy==1.21.0
 seaborn==0.11.2
 lightgbm==3.1.1
 xgboost==1.3.3
