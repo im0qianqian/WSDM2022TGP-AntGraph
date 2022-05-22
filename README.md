@@ -1,9 +1,12 @@
 # WSDM 2022 TGP - AntGraph
 
+Source code for "[An Effective Graph Learning based Approach for Temporal Link Prediction: The First Place of WSDM Cup 2022](https://arxiv.org/abs/2203.01820)"
+
+## WSDM Cup 2022
+
 [WSDM Cup Website link](https://www.wsdm-conference.org/2022/call-for-wsdm-cup-proposals/)
 
 [Link to this challenge](https://www.dgl.ai/WSDM2022-Challenge/)
-
 
 
 ## Datasets
@@ -123,4 +126,17 @@ tqdm==4.62.2
 scikit-learn==0.24.2
 matplotlib==3.3.4
 wandb==0.12.3
+```
+
+## References
+
+Please cite this repository using the following reference:
+
+```
+@article{zhao2022effective,
+  title={An Effective Graph Learning based Approach for Temporal Link Prediction: The First Place of WSDM Cup 2022},
+  author={Zhao, Qian and Yang, Shuo and Hu, Binbin and Zhang, Zhiqiang and Wang, Yakun and Chen, Yusong and Zhou, Jun and Shi, Chuan},
+  journal={arXiv preprint arXiv:2203.01820},
+  year={2022}
+}
 ```
