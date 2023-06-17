@@ -41,7 +41,7 @@ For dataset B, `src_id` and `dst_id` refer to different things, that is, they be
 
 **Quick guide**
 
-Download the `*.emb` from [this link (OneDrive)](https://im0qianqian-my.sharepoint.com/:f:/g/personal/i_dreamwings_cn/ElcuFF939sNPv5H4KWGDdtEBCQ-ONrqa9hqm4bzjS6dAEA?e=sk5kT8) and place it in the `./embs` folder.
+Download the `*.emb` from [this link (OneDrive)](https://dreamwingscn-my.sharepoint.com/:f:/g/personal/i_dreamwings_cn/ErnCSpB0lUFPhlBUZ7uOTXoBcBiTYi2ZFMBHCKmI21Q2iA?e=FCS8JE) and place it in the `./embs` folder.
 
 
 
